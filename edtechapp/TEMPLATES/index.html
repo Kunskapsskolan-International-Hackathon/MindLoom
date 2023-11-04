@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="blob"></div>
+<div id="blur"></div>
+
+<nav class="navbar relative">
+    <div class="content">
+        <div class="logo">
+            <a href="#">G20 </a>
+        </div>
+        <ul class="menu-list">
+            <div class="icon cancel-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Initiative</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</nav>
+
+<div class="content">
+
+    <br><br><br><br><br>
+    <marquee behavior="scroll" direction="left" onMouseOver="this.setAttribute('scrollamount', 0, 0);this.stop();"
+        OnMouseOut="this.setAttribute('scrollamount', 8, 0);this.start();" height="120px" scrollamount="8"><b>GATE
+            2024: IISc adds new paper on Data Science and AI, releases full schedule
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEET UG:
+            Uzbekistan launches toll-free helpline, website for MBBS aspirants from India</b>
+    </marquee>
+    <br>
+
+
+    <div class="banner">
+
+        <div class="">
+            <h2>Building a More Equitable World through Education</h2><br>
+            <p>G20 Initiative Workstream - ONE EARTH - ONE FAMILY - ONE FAMILY</p><br>
+            <p>
+                The G20 Sherpa Tracks are working to build a more equitable world through education. They are
+                committed to ensuring that
+                all children and young people have access to quality education, regardless of their background. They
+                are also working to
+                make education more relevant to the needs of the 21st century economy. By investing in education,
+                the G20 Sherpa Tracks
+                are helping to create a more just and prosperous world for all.</p><br><br>
+            <button class="btn">Get started</button>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div>
+        <div class="row">
+            <div class="column">
+                <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci quas
+                    perspiciatis maiores, odio quisquam est perferendis veniam accusamus laborum accusantium
+                    distinctio blanditiis nemo! Consequatur iure praesentium ab dolorum, veritatis architecto.</div>
+            </div>
+            <div class="column">
+                <div class="card">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio magnam repellat
+                    debitis ad modi non ullam impedit, voluptatem est excepturi. Dolores maiores est similique
+                    repudiandae laboriosam quibusdam voluptatibus amet quaerat.</div>
+            </div>
+            <div class="column">
+                <div class="card">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad corrupti hic facilis
+                    a provident rerum vero, doloribus voluptas sunt quas suscipit beatae sit sapiente, fuga
+                    inventore tempore dolorem quod cumque!</div>
+            </div>
+            <div class="column">
+                <div class="card">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo eaque est fuga
+                    sit! Laboriosam ex qui quos unde. Natus deserunt provident a voluptate, hic dolores ea illo
+                    distinctio sapiente neque.</div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="card"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio voluptatibus porro commodi?
+        Vel consequuntur corrupti soluta iste mollitia, in iure excepturi maiores beatae repudiandae velit
+        perferendis asperiores! Soluta, adipisci quos.</div>
+    <br><br>
+</div>
+
+
+<script>
+
+    const blob = document.getElementById("blob");
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menu = document.querySelector(".menu-list");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = () => {
+        menu.classList.add("active");
+        menuBtn.classList.add("hide");
+        cancelBtn.classList.add("show");
+        body.classList.add("disabledScroll");
+    }
+    cancelBtn.onclick = () => {
+        menu.classList.remove("active");
+        menuBtn.classList.remove("hide");
+        cancelBtn.classList.remove("show");
+        body.classList.remove("disabledScroll");
+    }
+
+    window.onscroll = () => {
+        this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+
+
+    window.onpointermove = event => {
+        const { clientX, clientY } = event;
+
+        blob.animate({
+            left: `${clientX}px`,
+            top: `${clientY}px`
+        }, { duration: 3000, fill: "forwards" });
+    }
+
+</script>
+    
+    {% endblock content %}
+    
