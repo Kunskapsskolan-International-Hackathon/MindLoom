@@ -2,29 +2,6 @@
 
 {% block content %}
 
-<div id="blob"></div>
-<div id="blur"></div>
-
-<nav class="navbar relative">
-    <div class="content">
-        <div class="logo">
-            <a href="#">G20 </a>
-        </div>
-        <ul class="menu-list">
-            <div class="icon cancel-btn">
-                <i class="fas fa-times"></i>
-            </div>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Initiative</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="icon menu-btn">
-            <i class="fas fa-bars"></i>
-        </div>
-    </div>
-</nav>
-
 <div class="content">
 
     <br><br><br><br><br>
@@ -49,7 +26,16 @@
                 are also working to
                 make education more relevant to the needs of the 21st century economy. By investing in education,
                 the G20 Sherpa Tracks
-                are helping to create a more just and prosperous world for all.</p><br><br>
+                are helping to create a more just and prosperous world for all.
+                
+                {% if user.is_authenticated %}
+  Hi {{ user.email }}!
+{% else %}
+  <p>You are not logged in</p>
+  <a href="">Log In</a>
+{% endif %}
+
+            </p><br><br>
             <button class="btn">Get started</button>
         </div>
     </div>
@@ -88,43 +74,6 @@
     <br><br>
 </div>
 
-
-<script>
-
-    const blob = document.getElementById("blob");
-    const body = document.querySelector("body");
-    const navbar = document.querySelector(".navbar");
-    const menu = document.querySelector(".menu-list");
-    const menuBtn = document.querySelector(".menu-btn");
-    const cancelBtn = document.querySelector(".cancel-btn");
-    menuBtn.onclick = () => {
-        menu.classList.add("active");
-        menuBtn.classList.add("hide");
-        cancelBtn.classList.add("show");
-        body.classList.add("disabledScroll");
-    }
-    cancelBtn.onclick = () => {
-        menu.classList.remove("active");
-        menuBtn.classList.remove("hide");
-        cancelBtn.classList.remove("show");
-        body.classList.remove("disabledScroll");
-    }
-
-    window.onscroll = () => {
-        this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
-    }
-
-
-    window.onpointermove = event => {
-        const { clientX, clientY } = event;
-
-        blob.animate({
-            left: `${clientX}px`,
-            top: `${clientY}px`
-        }, { duration: 3000, fill: "forwards" });
-    }
-
-</script>
     
     {% endblock content %}
     

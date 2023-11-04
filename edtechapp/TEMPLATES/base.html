@@ -1,21 +1,83 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>G20 Education Initiative</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="https://use.fontawesome.com/2632be0df5.js"></script>
-</head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/fcd2b27488.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
+    <div id="blob"></div>
+<div id="blur"></div>
 
-    {% block content %}
+<nav class="navbar relative">
+    <div class="content">
+        <div class="logo">
+            <a href="#">G20 </a>
+        </div>
+        <ul class="menu-list">
+            <div class="icon cancel-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Initiative</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="icon menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+</nav>
 
-    {% endblock content %}
+        {% block content %}
 
-</body>
+        {% endblock content %}
 
+
+    <script>
+      const blob = document.getElementById("blob");
+      const body = document.querySelector("body");
+      const navbar = document.querySelector(".navbar");
+      const menu = document.querySelector(".menu-list");
+      const menuBtn = document.querySelector(".menu-btn");
+      const cancelBtn = document.querySelector(".cancel-btn");
+      menuBtn.onclick = () => {
+        menu.classList.add("active");
+        menuBtn.classList.add("hide");
+        cancelBtn.classList.add("show");
+        body.classList.add("disabledScroll");
+      };
+      cancelBtn.onclick = () => {
+        menu.classList.remove("active");
+        menuBtn.classList.remove("hide");
+        cancelBtn.classList.remove("show");
+        body.classList.remove("disabledScroll");
+      };
+
+      window.onscroll = () => {
+        this.scrollY > 20
+          ? navbar.classList.add("sticky")
+          : navbar.classList.remove("sticky");
+      };
+
+      window.onpointermove = (event) => {
+        const { clientX, clientY } = event;
+
+        blob.animate(
+          {
+            left: `${clientX}px`,
+            top: `${clientY}px`,
+          },
+          { duration: 3000, fill: "forwards" }
+        );
+      };
+    </script>
+  </body>
 </html>
