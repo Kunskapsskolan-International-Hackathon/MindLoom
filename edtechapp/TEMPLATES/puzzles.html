@@ -5,56 +5,60 @@
     <br><br><br><br><br><br>
     <div class="banner">
         <div class="">
-            <h2>Welcome, {{user.first_name}} {{user.last_name}}.</h2><br>
-            <p>Points Earned: <b>{{ user.points }}</b> | Current Subscription : <b>{% if user.is_premium %} Premium {%
-                    elif user.is_ngo %} NGO {% else %} BASIC {% endif %}</b></p><br><br>
+            <h2>Welcome, {{user.first_name}} {{user.last_name}}!</h2><br>
+            <p>Points Earned: <b>{{ user.points }}</b> | Current Subscription : <b>{% if user.is_premium %} Premium {% elif user.is_ngo %} NGO {% else %} BASIC {% endif %}</b></p><br><br>
             <div>
                 <div class="row">
                     <div class="column">
-                        <a href="/puzzles/" style="color:white;text-decoration: none;">
-                            <div class="card">
-                                <h2>Puzzles</h2><br>
-                                <p>Access all the puzzles!</p><br>
-                                <img src="https://i.pinimg.com/originals/0f/50/02/0f500218fca07b2362f40701848ac907.png"
+                        <a href="/puzzles/simon/" style="color:white;text-decoration: none;">
+                            <div class="card" style="height:400px;">
+                                <h2>Simon Memorize</h2><br>
+                                <p>Play this memory game to enhance your recognition skills!</p><br><br><br>
+                                <img src="https://kidmons.com/assets/img/games/1col/100x100/simon.webp"
                                     width="200" height="200" alt="">
                             </div>
                         </a>
                     </div>
                     <div class="column">
-                        <a href="/information/" style="color:white;text-decoration: none;">
-                            <div class="card">
-                                <h2>INFORMATION</h2><br>
-                                <p>Access information about Autism!</p>
-                                <br>
-                                <img src="https://png.pngtree.com/png-vector/20221128/ourmid/pngtree-hand-drawn-cartoon-question-mark-decorative-icon-free-illustration-clipart-png-image_6484278.png"
-                                    width="200" height="200" alt="">
+                        <a href="/puzzles/puzzlekids/" style="color:white;text-decoration: none;">
+                            <div class="card" style="height:400px;">
+                                <h2>Puzzle 4 Kids</h2><br>
+                                <p>With Puzzle 4 kids, you won't be just doing puzzles and having fun, they will also be learning new words!</p><br>
+                                <img src="https://kidmons.com/assets/img/games/1col/100x100/puzzle4kids.webp" width="200" height="200" alt="">
                             </div>
                         </a>
                     </div>
                     <div class="column" style="color:grey;">
-                        <a href="/puzzles/" style="color:white;text-decoration: none;">
-                            <div class="card">
-                                <h2>Quizzes</h2><br>
-                                <b>
-                                    <p>COMING SOON</p>
-                                </b><br>
-                                <img src="https://image.similarpng.com/very-thumbnail/2020/12/Quiz-comic-pop-art-style-illustration-on-transparent-background-PNG.png"
-                                    width="200" height="200" alt="">
+                        <a href="/puzzles/coloringview/" style="color:white;text-decoration: none;">
+                            <div class="card" style="height:400px;">
+                                <h2>Coloring Book</h2><br>
+                                <p>This coloring book is perfect for small kids that are having a first contact with colors.
+                                </p><br><br>
+                                <img src="https://kidmons.com/assets/img/games/1col/100x100/coloring.webp" width="200" height="200" alt="">
                             </div>
                         </a>
                     </div>
 
                     <div class="column">
 
+                        <a href="/puzzles/paintonline/" style="color:white;text-decoration: none;">
+                            <div class="card" style="height:400px;">
+                                <h2>Paint Online!</h2><br>
+                                <p>Paint online is the perfect video game for kids that are fond of drawing and painting.
+                                </p><br><br>
+                                <img src="https://kidmons.com/assets/img/games/1col/100x100/paintonline.webp" width="200" height="200" alt="">
+                            </div>
+                        </a>
+
+                    </div>
+                </div><br><br>
+                <div class="row">
+                    <div class="column">
                         <div class="card" style="height:200px;">
-                            <h2>Support</h2><br>
-                            <p>Need help? Contact us!</p><br>
-                            <b>
-                                <a href="mailto:help@mindloom.com"><button class="btn">Contact Us!</button></a><br>
-                            </b><br>
-
+                            <h2>More Games Coming Soon!</h2><br>
+                            <p>The MindLoom team is creating more and more games everyday! Stay tuned for more!</p><br><br>
+                           
                         </div>
-
                     </div>
                 </div>
 

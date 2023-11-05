@@ -16,12 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.views import IndexView
+from core.views import IndexView, PuzzlesView, InformationView, PaintOnlineView, PuzzleKidsView, ColoringView, SimonMemorizeView
 from useraccounts.views import SignUpView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("django.contrib.auth.urls")),
     path('', IndexView, name="home"),
+    path('puzzles/', PuzzlesView, name="home"),
+    path('information/', InformationView, name="home"),
+    path("puzzles/paintonline/", PaintOnlineView, name="paintonline"),
+    path("puzzles/puzzlekids/", PuzzleKidsView, name="puzzlekids"),
+    path("puzzles/coloringview/", ColoringView, name="coloringview"),
+    path("puzzles/simon/", SimonMemorizeView, name="simon"),
+    
     path("signup/", SignUpView.as_view(), name="signup"),
 ]

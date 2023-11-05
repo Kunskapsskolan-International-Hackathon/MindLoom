@@ -7,17 +7,17 @@
 }
 
 body {
-    background-color: #36454f;
+    background-color: #FEE440;
     font-family: "Open Sans", sans-serif;
-    color: white;
+    color: black;
 }
 
 .form {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #36454f;
+    background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -37,7 +37,7 @@ body {
 }
 
 #blob {
-    background-color: #36454f;
+    background-color: #FEE440;
     height: 34vmax;
     aspect-ratio: 1;
     position: fixed;
@@ -45,7 +45,7 @@ body {
     top: 50%;
     translate: -50% -50%;
     border-radius: 50%;
-    background: linear-gradient(to right, #fbe5c0, #f88379, #d0e6f0);
+    background: linear-gradient(to right, #00F5D4, #00F5D4, #00F5D4);
     animation: rotate 20s infinite;
     opacity: 0.8;
     z-index: -1001;
@@ -79,8 +79,9 @@ h1 {
 
 .navbar.sticky {
     padding: 10px 0;
-    background: #F88379;
+    background: #00BBF9;
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    color:white;
 }
 
 .navbar .content {
@@ -90,7 +91,7 @@ h1 {
 }
 
 .navbar .logo a {
-    color: white;
+    color: black;
     font-size: 30px;
     font-weight: 600;
     text-decoration: none;
@@ -105,7 +106,7 @@ h1 {
 }
 
 .menu-list li a {
-    color: white;
+    color: black;
     font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
@@ -168,7 +169,7 @@ h1 {
         height: 100vh;
         width: 100%;
         background: #222;
-        color: white;
+        color: black;
         display: block;
         padding: 40px 0;
         text-align: center;
@@ -182,7 +183,7 @@ h1 {
 
     .navbar .menu-list.active {
         clip-path: circle(75%);
-        color: white;
+        color: black;
     }
 
     .navbar .menu-list li {
@@ -191,7 +192,7 @@ h1 {
 
     .navbar .menu-list li a {
         font-size: 23px;
-        color: white;
+        color: black;
     }
 }
 
@@ -199,8 +200,8 @@ h1 {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #fe9c16;
-    border: 1px solid #fe9c16;
+    background-color: #F15BB5;
+    border: 1px solid #F15BB5;
     font-size: 16px;
     color: white;
     font-family: sans-serif;
@@ -209,8 +210,8 @@ h1 {
 
 .btn:hover {
     background-color: #f8f8f8;
-    color: #fe9c16;
-    border: 1px solid #fe9c16;
+    color: #db3498;
+    border: 1px solid #db3498;
     cursor: pointer;
 }
 

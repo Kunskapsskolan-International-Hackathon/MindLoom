@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     'core',
     'useraccounts',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -69,7 +70,7 @@ TEMPLATES = [
         },
     },
 ]
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 WSGI_APPLICATION = 'edtechapp.wsgi.application'
 
 
