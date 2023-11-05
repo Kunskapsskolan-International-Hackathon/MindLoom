@@ -22,6 +22,6 @@ from useraccounts.views import SignUpView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("django.contrib.auth.urls")),
-    path('', IndexView.as_view(), name="home"),
+    path('', IndexView, name="home"),
     path("signup/", SignUpView.as_view(), name="signup"),
 ]

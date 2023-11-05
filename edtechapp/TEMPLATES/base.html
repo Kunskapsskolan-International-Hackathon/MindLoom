@@ -19,7 +19,7 @@
 <nav class="navbar relative">
     <div class="content">
         <div class="logo">
-            <a href="#">G20 </a>
+            <a href="/">MindLoom</a>
         </div>
         <ul class="menu-list">
             <div class="icon cancel-btn">
@@ -27,8 +27,12 @@
             </div>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Initiative</a></li>
-            <li><a href="#">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Log In</a></li>
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            {% endif %}
         </ul>
         <div class="icon menu-btn">
             <i class="fa-solid fa-bars"></i>
